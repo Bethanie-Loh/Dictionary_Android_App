@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <TextView
+            style="@style/common_text_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:text="You want to delete this word?"
+            android:textSize="@dimen/twenty_sp"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/common_text_view_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Action cannot be undone."
+            android:textSize="@dimen/eighteen_sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/gray"
+                android:text="Cancel"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:cornerRadius="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/alarm"
+                android:text="Delete"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:cornerRadius="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

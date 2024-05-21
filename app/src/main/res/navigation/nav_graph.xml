@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/containerFragment">
+
+    <fragment
+        android:id="@+id/updateWordFragment"
+        android:name="com.example.dictionary.ui.update_word.UpdateWordFragment"
+        android:label="fragment_update_word"
+        tools:layout="@layout/fragment_update_word" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_updateWordFragment_to_containerFragment"
+            app:destination="@id/containerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/containerFragment"
+        android:name="com.example.dictionary.ui.container.ContainerFragment"
+        android:label="ContainerFragment" >
+        <action
+            android:id="@+id/action_containerFragment_to_addWordFragment"
+            app:destination="@id/addWordFragment" />
+        <action
+            android:id="@+id/action_containerFragment_to_selectedWordFragment"
+            app:destination="@id/selectedWordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addWordFragment"
+        android:name="com.example.dictionary.ui.add_word.AddWordFragment"
+        android:label="fragment_add_word"
+        tools:layout="@layout/fragment_add_word" />
+    <fragment
+        android:id="@+id/selectedWordFragment"
+        android:name="com.example.dictionary.ui.selected_word.SelectedWordFragment"
+        android:label="fragment_selected_word"
+        tools:layout="@layout/fragment_selected_word" >
+        <action
+            android:id="@+id/action_selectedWordFragment_to_updateWordFragment"
+            app:destination="@id/updateWordFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_selectedWordFragment_to_containerFragment"
+            app:destination="@id/containerFragment" />
+    </fragment>
+</navigation>

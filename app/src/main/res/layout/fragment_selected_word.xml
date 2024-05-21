@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="word"
+            type="com.example.dictionary.data.model.Word" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lavender"
+            android:padding="@dimen/twenty_dp"
+            tools:context=".ui.selected_word.SelectedWordFragment">
+
+            <TextView
+                android:id="@+id/tvWord"
+                style="@style/h1_non_italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="50dp"
+                android:text="@{word.title}" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btnLearn"
+                style="@style/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/eight_dp"
+                android:backgroundTint="@color/sun"
+                android:src="@drawable/ic_unread"
+                android:text="Learn"
+                android:textSize="@dimen/sixteen_sp"
+                android:top="@id/tvWord"
+                app:cornerRadius="@dimen/ten_dp"
+                app:icon="@drawable/ic_unread" />
+
+            <TextView
+                android:id="@+id/tvMeaning"
+                style="@style/h2_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvWord"
+                android:text="@string/meaning" />
+
+            <TextView
+                android:id="@+id/tvMeaningText"
+                style="@style/common_text_view_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvMeaning"
+                android:layout_marginBottom="@dimen/twenty_four_dp"
+                android:text="@{word.meaning}"
+                android:textSize="@dimen/sixteen_sp" />
+
+            <TextView
+                android:id="@+id/tvSynonyms"
+                style="@style/h2_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvMeaningText"
+                android:text="@string/synonyms" />
+
+            <TextView
+                android:id="@+id/tvSynonymsText"
+                style="@style/common_text_view_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvSynonyms"
+                android:layout_marginBottom="@dimen/twenty_four_dp"
+                android:text="@{word.synonym}"
+                android:textSize="@dimen/sixteen_sp" />
+
+            <TextView
+                android:id="@+id/tvUsage"
+                style="@style/h2_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvSynonymsText"
+                android:text="Usage" />
+
+            <TextView
+                android:id="@+id/tvUsageText"
+                style="@style/common_text_view_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvUsage"
+                android:layout_marginBottom="@dimen/twenty_four_dp"
+                android:text="@{word.usage}"
+                android:textSize="@dimen/sixteen_sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/tvUsageText"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUpdate"
+                    style="@style/button"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/twenty_eight_dp"
+                    android:backgroundTint="@color/yolk"
+                    android:elevation="@dimen/four_dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/update"
+                    android:translationZ="2dp"
+                    app:cornerRadius="20dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDelete"
+                    style="@style/button"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/lipstick"
+                    android:elevation="@dimen/four_dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/delete"
+                    android:translationZ="2dp"
+                    app:cornerRadius="20dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/blue_bg"
+        tools:context=".ui.home.HomeFragment">
+
+        <include
+            android:id="@+id/topnav"
+            layout="@layout/layout_search_topnav" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCompletedWords"
+            android:layout_width="match_parent"
+            android:layout_below="@id/topnav"
+            android:layout_height="400dp"
+            android:layout_margin="@dimen/sixteen_dp" />
+
+        <TextView
+            android:id="@+id/tvEmptyRv"
+            style="@style/h1_non_italic"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="You have no word yet"
+            android:textSize="@dimen/twenty_two_sp"
+            android:visibility="invisible"
+            app:drawableTopCompat="@drawable/ic_sticky_note" />
+
+    </RelativeLayout>
+</layout>

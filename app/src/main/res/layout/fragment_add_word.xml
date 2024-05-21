@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.dictionary.ui.add_word.AddWordViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/blue_floral_bg"
+        tools:context=".ui.add_word.AddWordFragment">
+
+        <TextView
+            android:id="@+id/tvAddNewWord"
+            style="@style/h1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="60dp"
+            android:shadowColor="@color/blue"
+            android:shadowDx="6"
+            android:shadowDy="6"
+            android:shadowRadius="10"
+            android:text="Add New Word" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/h2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAddNewWord"
+            android:layout_centerHorizontal="true"
+            android:text="Title" />
+
+        <EditText
+            android:id="@+id/etTitle"
+            style="@style/inputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTitle"
+            android:layout_marginHorizontal="20dp"
+            android:hint="Add Title"
+            android:text="@={viewModel.title}" />
+
+        <TextView
+            android:id="@+id/tvMeaning"
+            style="@style/h2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etTitle"
+            android:layout_centerHorizontal="true"
+            android:text="Meaning" />
+
+        <EditText
+            android:id="@+id/etMeaning"
+            style="@style/inputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMeaning"
+            android:layout_marginHorizontal="20dp"
+            android:hint="Add Meaning"
+            android:text="@={viewModel.meaning}" />
+
+
+        <TextView
+            android:id="@+id/tvSynonyms"
+            style="@style/h2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etMeaning"
+            android:layout_centerHorizontal="true"
+            android:text="Synonyms" />
+
+        <EditText
+            android:id="@+id/etSynonyms"
+            style="@style/inputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvSynonyms"
+            android:layout_marginHorizontal="20dp"
+            android:hint="Add Synonyms"
+            android:text="@={viewModel.synonym}" />
+
+        <TextView
+            android:id="@+id/tvUsage"
+            style="@style/h2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etSynonyms"
+            android:layout_centerHorizontal="true"
+            android:text="Usage" />
+
+        <EditText
+            android:id="@+id/etUsage"
+            style="@style/inputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvUsage"
+            android:layout_marginHorizontal="20dp"
+            android:hint="Add Usage"
+            android:text="@={viewModel.usage}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddNewWord"
+            style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etUsage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="120dp"
+            android:layout_marginVertical="30dp"
+            android:backgroundTint="@color/blue"
+            android:elevation="@dimen/four_dp"
+            android:onClick="@{() -> viewModel.submit()}"
+            android:stateListAnimator="@null"
+            android:text="Add"
+            android:translationZ="4dp"
+            app:cornerRadius="16dp" />
+    </RelativeLayout>
+</layout>
