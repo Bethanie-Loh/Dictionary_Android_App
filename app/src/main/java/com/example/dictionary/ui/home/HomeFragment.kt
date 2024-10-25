@@ -52,15 +52,12 @@ class HomeFragment : Fragment() {
                     wordAdapter.setWords(it)
                     binding.tvEmptyRv.isInvisible = wordAdapter.itemCount != 0
                 }
-
             }
         }
 
         binding.run {
             topnav.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    return false
-                }
+                override fun onQueryTextSubmit(query: String?): Boolean = false
 
                 override fun onQueryTextChange(newText: String?): Boolean {
                     Log.d("debugging", "newText = $newText")

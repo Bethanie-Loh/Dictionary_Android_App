@@ -17,5 +17,4 @@ class DictionaryApp : Application() {
 
         repo = DictRepository(db.wordDao())
     }
-
 }

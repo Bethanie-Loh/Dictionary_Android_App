@@ -36,5 +36,4 @@ interface WordDao {
 
     @Query("UPDATE Word SET status = :status WHERE id = :id")
     fun updateStatus(id: Int, status: Boolean)
-
 }

@@ -22,10 +22,8 @@ class UpdateWordFragment : Fragment() {
     ): View {
         binding = FragmentUpdateWordBinding.inflate(layoutInflater, container, false)
 
-        arguments?.let {
-            selectedWordId = UpdateWordFragmentArgs.fromBundle(it).id
-            updateViewModel.getWord(selectedWordId)
-        }
+        selectedWordId = requireArguments().getInt("id", 0)
+        updateViewModel.getWord(selectedWordId)
 
         updateViewModel.run {
             words.observe(viewLifecycleOwner) { binding.word = it }
